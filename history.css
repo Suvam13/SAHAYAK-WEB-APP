@@ -1,0 +1,524 @@
+/* Reset and Base Styles */
+
+/* Fonts */
+:root {
+  --bg: #d5f4ff;
+  --bg-2: #c7edf9;
+  --ink: #0a2a3a;
+  --ink-soft: #2a4b5a;
+  --brand: #3aa6ff;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--ink);
+  background: linear-gradient(#cfeffa, #e0f7ff);
+}
+
+.container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+
+/* Header */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #c9edf3cc;
+  backdrop-filter: saturate(1.2) blur(8px);
+  border-bottom: 1px solid #bde3ec;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.brand .logo {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+}
+
+.brand .brand-text {
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.menu {
+  display: flex;
+  gap: 28px;
+}
+
+.menu a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: .8;
+}
+
+.menu a:hover {
+  opacity: 1;
+}
+
+.user .user-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+}
+
+/* Hamburger (hidden by default) */
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  width: 34px;
+  height: 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: var(--ink);
+  border-radius: 2px;
+  position: relative;
+  transition: .25s transform, .25s opacity;
+}
+
+.hamburger span+span {
+  margin-top: 6px;
+}
+
+/* X animation */
+.nav-toggle:checked+.hamburger span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle:checked+.hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle:checked+.hamburger span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Main Content */
+.main-content {
+  padding: 2rem 0;
+  min-height: calc(100vh - 200px);
+}
+
+.data-section {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0a2a3a;
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heart-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.thermometer-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.pulse-line {
+  width: 20px;
+  height: 2px;
+  background: #ff6b6b;
+  position: relative;
+}
+
+.pulse-line::before,
+.pulse-line::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #ff6b6b;
+  top: -4px;
+  animation: pulse 2s infinite;
+}
+
+.pulse-line::after {
+  top: 4px;
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Chart Styles */
+.chart-container {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.chart-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0a2a3a;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.chart-wrapper {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chart-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  min-width: 40px;
+}
+
+.chart-content {
+  flex: 1;
+  position: relative;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  justify-content: space-around;
+  height: 200px;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.bar {
+  background: #ff6b6b;
+  width: 40px;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-value {
+  position: absolute;
+  top: -25px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0a2a3a;
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-around;
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0a2a3a;
+}
+
+.y-label {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+/* This is no longer needed with chart.js annotations */
+/* .normal-range {
+  display: none;
+} */
+
+/* Chart Legend */
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.legend-color.blue {
+  background: #3aa6ff;
+}
+
+.legend-color.orange {
+  background: #ff8c42;
+}
+
+/* This is no longer needed with chart.js annotations */
+/* .legend-color.green-dashed {
+  background: repeating-linear-gradient(to right,
+        #28a745 0,
+        #28a745 4px,
+        transparent 4px,
+        transparent 8px);
+} */
+
+.legend-color.red-x {
+  background: #ff0000;
+}
+
+/* Footer Styles */
+.site-footer {
+  /* Changed background to light blue as per image */
+  background: #a9e0e5; /* A light blue similar to the image */
+  color: #0a2a3a; /* Dark text color as per image */
+  padding: 3rem 0 1rem;
+  margin-top: 3rem;
+  display: flex; /* Use flexbox for main footer content */
+  flex-direction: column;
+  align-items: center; /* Center items horizontally */
+}
+
+.footer-grid {
+  display: flex; /* Use flexbox for the three main columns */
+  justify-content: space-around; /* Distribute space evenly */
+  align-items: flex-start; /* Align items to the top */
+  width: min(1120px, 92%); /* Keep container width */
+  gap: 2rem; /* Spacing between columns */
+  margin-bottom: 2rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.reach,
+.links {
+  flex-basis: 250px; /* Give a base width to these columns */
+  text-align: left; /* Align text to the left */
+}
+
+.reach h4,
+.links h4 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700; /* Make headings bold as in image */
+}
+
+.reach p {
+  line-height: 1.8;
+  font-size: 0.95rem; /* Adjust font size */
+}
+
+.foot-brand {
+  text-align: center;
+  display: flex; /* Use flex for logo and text within brand */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Allow the brand section to grow and take available space */
+}
+
+.foot-brand img {
+  width: 100px; /* Adjust logo size */
+  height: 100px;
+  margin: 0 auto 1rem;
+}
+
+.foot-brand .brand-text {
+  color: #0a2a3a; /* Dark text color for brand name */
+  font-size: 1.5rem; /* Larger font size for brand name */
+  font-weight: 800; /* Make it bold */
+  letter-spacing: 2px;
+}
+
+.links ul {
+  list-style: none;
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.links li {
+  margin-bottom: 0.5rem;
+}
+
+.links a {
+  color: #0a2a3a; /* Dark text color for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem; /* Adjust font size */
+}
+
+.links a:hover {
+  color: var(--brand); /* Use your brand color on hover */
+}
+
+.credits {
+  text-align: center;
+  padding-top: 1rem; /* Adjust padding */
+  border-top: none; /* Removed border as per image */
+  color: #0a2a3a; /* Dark text color for credits */
+  font-size: 0.85rem;
+}
+
+/* Responsive: make logo-footer a bit smaller on mobile */
+@media (max-width: 480px) {
+  .foot-brand img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #0a2a3a;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  .nav-toggle:checked~.hamburger span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .nav-toggle:checked~.hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked~.hamburger span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-toggle:checked~.menu {
+    display: flex;
+  }
+
+  .chart-legend {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .data-section {
+    padding: 1.5rem;
+  }
+
+  .chart-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .chart-bars {
+    height: 150px;
+  }
+
+  .line-chart {
+    height: 150px;
+  }
+
+  .foot-brand img {
+    width: 56px;
+    height: 56px;
+  }
+}
