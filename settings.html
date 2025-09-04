@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahayak • Settings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/settings.css" />
+    <link rel="icon" type="image/x-icon" href="/images/Logo.png">
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true">
+            <img src="images/4.png" alt="Sahayak Logo" />
+          </span>
+          <span class="brand-text">SAHAYAK</span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav id="primary-menu" class="menu">
+          <a href="\dashboard.html">DASHBOARD</a>
+          <a href="\history.html">HISTORY</a>
+          <a href="\location.html">LOCATION</a>
+          <a href="\settings" class="active">SETTING</a>
+        </nav>
+
+        <div class="user">
+          <a
+            href="\login.html"
+            class="user-icon"
+            aria-label="Account"
+            title="Account"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9" stroke="#0a2a3a" stroke-width="2" />
+              <circle cx="12" cy="9" r="3" stroke="#0a2a3a" stroke-width="2" />
+              <path
+                d="M6.5 18c1.7-2.6 4-4 5.5-4s3.8 1.4 5.5 4"
+                stroke="#0a2a3a"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <div class="page-content">
+          <h1>Settings</h1>
+          <p>Manage your preferences and configurations below.</p>
+
+          <!-- Profile & Account -->
+          <section>
+            <h2>👤 Profile & Account</h2>
+            <p>Device-ID: <input type="text" placeholder="Enter ID" /></p>
+            <p>Name: <input type="text" placeholder="Enter name" /></p>
+            <p>
+              Age / Relationship:
+              <input type="text" placeholder="e.g., Daughter" />
+            </p>
+            <p>
+              Contact Number: <input type="text" placeholder="Phone number" />
+            </p>
+            <p>Email: <input type="email" placeholder="example@mail.com" /></p>
+            <button>Change Password / PIN</button>
+          </section>
+
+          <!-- Device & Alerts -->
+          <section>
+            <h2>📡 Device & Alerts</h2>
+            <p>Device ID: <strong>101</strong></p>
+            <p>Status: ✅ Connected</p>
+            <button>Reconnect / Unpair</button>
+            <!-- <h3>Alert Preferences</h3>
+            <label
+              ><input type="checkbox" checked /> Fall Detection Alerts
+              (SMS/App)</label
+            ><br />
+            <label><input type="checkbox" /> Heart Rate Alerts</label><br />
+            <label><input type="checkbox" /> Temperature Alerts</label><br />
+            <label><input type="checkbox" /> Location Sharing</label> -->
+          </section>
+
+          <!-- Emergency Contacts -->
+          <section>
+            <h2>📞 Emergency Contacts</h2>
+            <p>
+              Primary Contact: <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Number" />
+            </p>
+            <button>Edit</button> <button>Delete</button> <br /><br />
+            <button>➕ Add Secondary Contact</button>
+          </section>
+
+          <!-- Data & Reports -->
+          <!-- <section>
+            <h2>📊 Data & Reports</h2>
+            <button>Download Health Reports (PDF/CSV)</button><br /><br />
+            <label
+              >Report Frequency:
+              <select>
+                <option>Daily</option>
+                <option selected>Weekly</option>
+                <option>Monthly</option>
+              </select>
+            </label>
+          </section> -->
+
+          <!-- App Preferences -->
+          <section>
+            <h2>⚙️ App Preferences</h2>
+            <label
+              >Theme:
+              <select>
+                <option>Light</option>
+                <option>Dark</option>
+                <option selected>System Default</option>
+              </select>
+            </label>
+            <br /><br />
+            <label
+              >Font Size:
+              <select>
+                <option>Small</option>
+                <option selected>Medium</option>
+                <option>Large</option>
+              </select>
+            </label>
+            <br /><br />
+            <label
+              >Language:
+              <select>
+                <option selected>English</option>
+                <option>Nepali</option>
+                <option>Hindi</option>
+              </select>
+            </label>
+          </section>
+
+          <!-- Support -->
+          <section>
+            <h2>❓ Support</h2>
+            <button>Help & FAQs</button><br /><br />
+            <button>Contact Support</button><br /><br />
+            <button>Privacy Policy</button>
+          </section>
+
+          <!-- Danger Zone -->
+          <section>
+            <!-- <h2>⚠️ Danger Zone</h2> -->
+            <button>Logout</button><br /><br />
+            <!-- <button>Delete Account</button> -->
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="reach">
+          <h4>Reach us at</h4>
+          <p>
+            sahayak@gmail.com<br />sahakayin‪sta<br />sahayaktwitter<br />01567345
+          </p>
+        </div>
+        <div class="foot-brand" aria-hidden="true">
+          <span class="logo-footer" aria-hidden="true">
+            <img src="images/logo.png" alt="Sahayak Logo" />
+          </span>
+          <div class="brand-text">SAHAYAK</div>
+        </div>
+        <div class="links">
+          <h4>Some useful links</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="location.html">Live Location</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="credits">© 2025 Sahayak - All rights reserved</div>
+    </footer>
+  </body>
+</html>

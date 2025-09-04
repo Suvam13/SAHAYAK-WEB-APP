@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahayak • Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/dashboard.css" />
+    <link rel="icon" type="image/x-icon" href="/images/Logo.png">
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true">
+            <img src="images/4.png" alt="Sahayak Logo" />
+          </span>
+          <span class="brand-text">SAHAYAK</span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav id="primary-menu" class="menu">
+          <a href="\dashboard.html">DASHBOARD</a>
+          <a href="\history.html">HISTORY</a>
+          <a href="\location.html">LOCATION</a>
+          <a href="\settings.html">SETTING</a>
+        </nav>
+
+        <div class="user">
+          <a
+            href="\login.html"
+            class="user-icon"
+            aria-label="Account"
+            title="Account"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9" stroke="#0a2a3a" stroke-width="2" />
+              <circle cx="12" cy="9" r="3" stroke="#0a2a3a" stroke-width="2" />
+              <path
+                d="M6.5 18c1.7-2.6 4-4 5.5-4s3.8 1.4 5.5 4"
+                stroke="#0a2a3a"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="status-pill">
+          <div class="pill-title">(( SAFE ))</div>
+          <div class="pill-sub">Current status</div>
+        </div>
+
+        <div class="hero-copy">
+          <h1>
+            <span>Stay</span><br />
+            <span>Alert. Stay</span><br />
+            <span>Connected.</span>
+          </h1>
+          <p class="sub">
+            Real-time monitoring and alerts for your loved ones.
+          </p>
+          <a id="fallButton" class="btn primary" style="display: none;">Noticed?</a>
+        </div>
+
+        <div class="blob-card">
+          <div class="blob"></div>
+          <div class="blob-content">
+            <div class="icon-heart" aria-hidden="true">
+              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M8 24c0-6.6 5.4-12 12-12 4.7 0 8.7 2.7 10.8 6.6C33 14.7 37 12 41.8 12 48.4 12 54 17.4 54 24c0 16-22 26-23.2 26C29.6 50 8 40 8 24z"
+                  fill="#0a2a3a"
+                />
+              </svg>
+            </div>
+            <div class="stat big">
+              <span class="num" id="heartRate">72</span>
+              <span class="unit">bpm</span>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat icon-line">
+                <span class="icon"></span>
+                <span class="label">Temp</span>
+                <span class="num" id="temperature">98*</span>
+              </div>
+            </div>
+
+            <!-- Optional: for debugging status -->
+            <p>Status: <span id="status">Normal</span></p>
+
+            <!-- <div class="stat big">
+              <span class="num">72</span> <span class="unit">bpm</span>
+            </div>
+            <div class="stat-row">
+              <div class="stat icon-line">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M9 14V6a3 3 0 0 1 6 0v8a5 5 0 1 1-6 0z"
+                      fill="#0a2a3a"
+                    />
+                    <path
+                      d="M12 2a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0V3a1 1 0 0 0-1-1z"
+                      fill="#0a2a3a"
+                    />
+                  </svg>
+                </span>
+                <span class="label">F</span>
+                <span class="num">98*</span>
+              </div> -->
+              <div class="stat icon-line">
+                <span class="icon">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 2C8 2 5 5.1 5 9.1 5 14.2 12 22 12 22s7-7.8 7-12.9C19 5.1 16 2 12 2zm0 9.5a3 3 0 110-6 3 3 0 010 6z"
+                      fill="#0a2a3a"
+                    />
+                  </svg>
+                </span>
+                <span class="label">Home</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News banner -->
+    <section class="news">
+      <div class="container">
+        <div class="news-strip">News like banner with headlines of summary</div>
+      </div>
+    </section>
+
+    <!-- Charts section -->
+    <section id="history" class="charts">
+      <div class="container charts-grid">
+        <div class="geom">
+          <div class="geom-art">
+            <span class="circle"></span>
+            <span class="line"></span>
+            <span class="triangle"></span>
+          </div>
+        </div>
+        <div class="charts-copy">
+          <p class="mono">history,graphs<br />&<br />charts</p>
+          <a class="btn outline" href="/history.html">View Charts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live location section -->
+    <section id="live-stats" class="location">
+      <div class="container location-grid">
+        <div class="loc-copy">
+          <h3>Know your loved one’s current location</h3>
+          <a class="btn primary" href="/location.html">Live Location</a>
+        </div>
+        <div class="loc-illustration" aria-hidden="true">
+          <svg viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20 80l10-36 20 10 20-10 10 36-30 14-30-14z"
+              fill="#a1d9ff"
+              stroke="#0a2a3a"
+              stroke-width="2"
+            />
+            <path
+              d="M77 60a13 13 0 10-26 0c0 10 13 22 13 22s13-12 13-22z"
+              fill="#e6f6ff"
+              stroke="#0a2a3a"
+              stroke-width="2"
+            />
+            <circle cx="64" cy="60" r="5" fill="#3aa6ff" />
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product and About
+    <section class="about">
+      <div class="container about-grid">
+        <div class="product-card">
+          <div class="product-ph">Image of the wrist band</div>
+        </div>
+        <div class="about-copy">
+          <h3>More about us</h3>
+          <ul>
+            <li>about us</li>
+            <li>contact us</li>
+            <li>get premium</li>
+          </ul>
+          <a class="btn outline" href="#about">About Sahayak</a>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="reach">
+          <h4>Reach us at</h4>
+          <p>
+            sahayak@gmail.com<br />sahakayin‪sta<br />sahayaktwitter<br />01567345
+          </p>
+        </div>
+        <div class="foot-brand" aria-hidden="true">
+          <span class="logo-footer" aria-hidden="true">
+            <img src="images/logo.png" alt="Sahayak Logo" />
+          </span>
+          <div class="brand-text">SAHAYAK</div>
+        </div>
+        <div class="links">
+          <h4>Some useful links</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="location.html">Live Location</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="credits">© 2025 Sahayak - All rights reserved</div>
+    </footer>
+    <script src="JS/dashboard.js"></script>
+  </body>
+</html>

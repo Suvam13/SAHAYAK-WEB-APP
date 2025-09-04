@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahayak • History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/history.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.2"></script>
+    <script src="/JS/history.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="/images/Logo.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true">
+            <img src="images/4.png" alt="Sahayak Logo" />
+          </span>
+          <span class="brand-text">SAHAYAK</span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+        >
+          <span></span><span></span><span></span>
+        </label>
+
+        <nav id="primary-menu" class="menu">
+          <a href="dashboard.html">DASHBOARD</a>
+          <a href="history.html">HISTORY</a>
+          <a href="location.html">LOCATION</a>
+          <a href="settings.html">SETTING</a>
+        </nav>
+
+        <div class="user">
+          <a
+            href="login.html"
+            class="user-icon"
+            aria-label="Account"
+            title="Account"
+          >
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="9" stroke="#0a2a3a" stroke-width="2" />
+              <circle cx="12" cy="9" r="3" stroke="#0a2a3a" stroke-width="2" />
+              <path
+                d="M6.5 18c1.7-2.6 4-4 5.5-4s3.8 1.4 5.5 4"
+                stroke="#0a2a3a"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <section class="data-section falls-section">
+          <h2 class="section-title">Falls past 6 months</h2>
+          <div class="chart-container">
+            <h3 class="chart-title">
+              Accidental Falls Recorded (Past 6 Months)
+            </h3>
+            <div class="chart-wrapper">
+              <canvas id="fallsChart"></canvas>
+            </div>
+            <div class="chart-labels">
+              <!-- <div class="y-label">Number of Falls</div> -->
+              <!-- <div class="x-label">Month</div> -->
+            </div>
+          </div>
+        </section>
+
+        <section class="data-section heart-section">
+          <div class="section-header">
+            <div class="icon-container">
+              <svg class="heart-icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+                  fill="#ff6b6b"
+                />
+              </svg>
+              <div class="pulse-line"></div>
+            </div>
+            <h2 class="section-title">Heart Rate (past 30 days) </h2>
+          </div>
+          <div class="chart-container">
+            <div class="chart-wrapper">
+              <canvas id="heartRateChart"></canvas>
+            </div>
+            <div class="chart-labels">
+              <!-- <div class="y-label">Heart Rate (bpm)</div>
+              <div class="x-label">Date</div> -->
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color blue"></div>
+                <span>Heart Rate</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color green-dashed"></div>
+                <span>Normal Range (60-90 bpm)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color red-x"></div>
+                <span>Abnormal Instances</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="data-section temp-section">
+          <div class="section-header">
+            <h2 class="section-title">All the details about temperature</h2>
+            <div class="icon-container">
+              <svg class="thermometer-icon" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12 2a5 5 0 0 1 5 5v6.5a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"
+                  stroke="#000"
+                  stroke-width="2"
+                />
+                <path d="M12 2v20" stroke="#000" stroke-width="2" />
+                <circle cx="12" cy="20" r="2" fill="#000" />
+              </svg>
+            </div>
+          </div>
+          <div class="chart-container">
+            <h3 class="chart-title">
+              Elderly Person's Body Temperature Stats (July 2025)
+            </h3>
+            <div class="chart-wrapper">
+              <canvas id="tempChart"></canvas>
+            </div>
+            <div class="chart-labels">
+              <!-- <div class="y-label">Temperature (°C)</div>
+              <div class="x-label">Date</div> -->
+            </div>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color orange"></div>
+                <span>Body Temperature</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color green-dashed"></div>
+                <span>Normal Range (36.1°C - 37.2°C)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color red-x"></div>
+                <span>Abnormal Instances</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="reach">
+          <h4>Reach us at</h4>
+          <p>
+            sahayak@gmail.com<br />sahakayin‪sta<br />sahayaktwitter<br />01567345
+          </p>
+        </div>
+        <div class="foot-brand" aria-hidden="true">
+          <img src="images/logo.png" alt="Sahayak Logo" />
+          <div class="brand-text">SAHAYAK</div>
+        </div>
+        <div class="links">
+          <h4>Some useful links</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="location.html">Live Location</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="credits">© 2025 Sahayak - All rights reserved</div>
+    </footer>
+  </body>
+</html>

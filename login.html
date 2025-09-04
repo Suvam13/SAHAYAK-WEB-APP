@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sahayak • Profile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="CSS/login.css" />
+    <link rel="icon" type="image/x-icon" href="/images/Logo.png" />
+    <script src="JS/login.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#">
+          <span class="logo" aria-hidden="true">
+            <img src="images/4.png" alt="Sahayak Logo" />
+          </span>
+          <span class="brand-text">SAHAYAK</span>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label
+          for="nav-toggle"
+          class="hamburger"
+          aria-label="Toggle navigation"
+          aria-controls="primary-menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav id="primary-menu" class="menu">
+          <a href="\dashboard.html">DASHBOARD</a>
+          <a href="\history.html">HISTORY</a>
+          <a href="\location.html">LOCATION</a>
+          <a href="\settings.html">SETTING</a>
+        </nav>
+
+        <div class="user">
+          <a
+            href="\login.html"
+            class="user-icon"
+            aria-label="Account"
+            title="Account"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="12" r="9" stroke="#0a2a3a" stroke-width="2" />
+              <circle cx="12" cy="9" r="3" stroke="#0a2a3a" stroke-width="2" />
+              <path
+                d="M6.5 18c1.7-2.6 4-4 5.5-4s3.8 1.4 5.5 4"
+                stroke="#0a2a3a"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="page-content">
+      <h1>Device Login</h1>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="deviceId">Device ID</label>
+          <input
+            type="text"
+            id="deviceId"
+            name="deviceId"
+            placeholder="Enter Device ID"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <button type="submit" class="btn">Login</button>
+      </form>
+      <div id="message"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="reach">
+          <h4>Reach us at</h4>
+          <p>
+            sahayak@gmail.com<br />sahakayin‪sta<br />sahayaktwitter<br />01567345
+          </p>
+        </div>
+        <div class="foot-brand" aria-hidden="true">
+          <span class="logo-footer" aria-hidden="true">
+            <img src="images/logo.png" alt="Sahayak Logo" />
+          </span>
+          <div class="brand-text">SAHAYAK</div>
+        </div>
+        <div class="links">
+          <h4>Some useful links</h4>
+          <ul>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="location.html">Live Location</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="credits">© 2025 Sahayak - All rights reserved</div>
+    </footer>
+  </body>
+</html>
